@@ -1,6 +1,6 @@
 # RESTful-API-for-BookStore
 
-This project is a simple RESTful API for managing a list of books using Express.js. It implements CRUD operations (Create, Read, Update, Delete) and uses an in-memory array to store book data.
+This project is a simple RESTful API for managing a list of books using Express.js. It implements CRUD operations (Create, Read, Update, Delete) and uses an in-memory array to store book data & database as a .csv file.
 
 ## Features
 
