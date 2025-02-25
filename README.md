@@ -14,4 +14,4 @@ This project is a simple RESTful API for managing a list of books using Express.
 - Node.js  
 - Express.js  
 
-# This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License.
