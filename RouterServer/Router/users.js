@@ -8,7 +8,7 @@ app.use(express.json());
 const authMiddleware = (req, res, next) => {
     const token = req.headers['authorization'];
     if (token === "Bearer ZEWAIL") {
-      next();
+    next();
     } else {
     res.status(403).send('Forbidden: Invalid Token');
     }
@@ -19,7 +19,7 @@ router.use(authMiddleware);
 
 
 const Read_Book_Store = () => {
-    const data = fs.readFileSync('./BookStore.csv','utf8');
+    const data = fs.readFileSync('C:/Users/Kimos/OneDrive/Documents/GitHub/RESTful-API-for-BookStore/BookStore.csv','utf8');
     return data.split('\n').map(line => {
         const [ID, Title, Author] = line.split(',');
         return { ID: Number(ID), Title, Author };
@@ -32,11 +32,11 @@ const Write_Book_Store = (books) => {
     books.forEach(book => {
         data += book.ID + ',' + book.Title + ',' + book.Author + '\n';
     });
-    fs.writeFileSync('./BookStore.csv', data, 'utf8');
+    fs.writeFileSync('C:/Users/Kimos/OneDrive/Documents/GitHub/RESTful-API-for-BookStore/BookStore.csv', data, 'utf8');
 };
 
 
-router.get('/books', (res, req) => {
+router.get('/books', (req, res) => {
     const books = Read_Book_Store();
     res.send(books);
 });
